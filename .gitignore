@@ -1,0 +1,13 @@
+.gradle
+/local.properties
+.idea
+/.idea
+.DS_Store
+*.iml
+/build
+*.apk
+/captures
+# fuck you to mac
+.DS_Store
+.AppleDouble
+.LSOverride

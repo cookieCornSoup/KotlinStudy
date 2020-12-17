@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.example.kotlinstudy"
+        minSdkVersion 27
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+repositories {
+    google()
+}
+
+dependencies {
+    def activity_version = "1.2.0-alpha06"
+    implementation "androidx.activity:activity:$activity_version"
+    implementation "androidx.activity:activity-ktx:$activity_version"
+
+    def fragment_version = "1.3.0-alpha06"
+    implementation "androidx.fragment:fragment:$fragment_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    //core, ktx
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation "androidx.collection:collection-ktx:1.1.0"
+
+    //room
+    implementation "androidx.room:room-ktx:2.2.5"
+
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //viewmodel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
+
+    //material, layout
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+
+
+    //navigation
+    implementation "androidx.navigation:navigation-runtime-ktx:2.3.2"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+
+
+    //test
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
